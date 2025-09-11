@@ -1,0 +1,217 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Enhanced ocean-inspired color palette with better contrast */
+  --background: #ffffff; /* Pure white for better contrast */
+  --foreground: #0f172a; /* Darker slate for better readability */
+  --card: #f8fafc; /* Very light slate for subtle card backgrounds */
+  --card-foreground: #1e293b; /* Dark slate for card text */
+  --popover: #ffffff; /* White for popovers */
+  --popover-foreground: #1e293b; /* Dark slate for popover text */
+  --primary: #0ea5e9; /* Sky blue - more vibrant ocean color */
+  --primary-foreground: #ffffff; /* White text on primary buttons */
+  --secondary: #f1f5f9; /* Light slate for secondary elements */
+  --secondary-foreground: #475569; /* Medium slate text */
+  --muted: #f1f5f9; /* Light slate for muted elements */
+  --muted-foreground: #64748b; /* Slate gray for muted text */
+  --accent: #06b6d4; /* Cyan for accents - complementary ocean color */
+  --accent-foreground: #ffffff; /* White text on accent elements */
+  --destructive: #ef4444; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White text on destructive buttons */
+  --border: #e2e8f0; /* Light slate border */
+  --input: #ffffff; /* White input fields */
+  --ring: #0ea5e9; /* Sky blue for focus rings */
+  --chart-1: #0ea5e9; /* Sky blue for chart elements */
+  --chart-2: #06b6d4; /* Cyan for chart elements */
+  --chart-3: #8b5cf6; /* Purple for chart variety */
+  --chart-4: #10b981; /* Emerald for chart elements */
+  --chart-5: #f59e0b; /* Amber for chart elements */
+  --radius: 0.75rem; /* Slightly more rounded corners */
+  --sidebar: #f8fafc; /* Light slate for sidebar */
+  --sidebar-foreground: #1e293b; /* Dark slate for sidebar text */
+  --sidebar-primary: #0ea5e9; /* Sky blue for sidebar primary elements */
+  --sidebar-primary-foreground: #ffffff; /* White text on sidebar primary elements */
+  --sidebar-accent: #06b6d4; /* Cyan for sidebar accents */
+  --sidebar-accent-foreground: #ffffff; /* White text on sidebar accent elements */
+  --sidebar-border: #e2e8f0; /* Light slate border for sidebar */
+  --sidebar-ring: #0ea5e9; /* Sky blue for sidebar focus rings */
+
+  /* Enhanced ocean gradient colors */
+  --ocean-deep: #0c4a6e; /* Deep ocean blue */
+  --ocean-medium: #0ea5e9; /* Medium ocean blue */
+  --ocean-light: #7dd3fc; /* Light ocean blue */
+  --coral: #fb7185; /* Coral pink */
+  --seafoam: #34d399; /* Seafoam green */
+}
+
+.dark {
+  /* Enhanced dark mode with better ocean theme */
+  --background: #020617; /* Very dark slate */
+  --foreground: #f8fafc; /* Light slate */
+  --card: #0f172a; /* Dark slate */
+  --card-foreground: #e2e8f0; /* Light slate */
+  --popover: #0f172a; /* Dark slate */
+  --popover-foreground: #e2e8f0; /* Light slate */
+  --primary: #38bdf8; /* Lighter sky blue for dark mode */
+  --primary-foreground: #020617; /* Very dark slate text */
+  --secondary: #1e293b; /* Medium dark slate */
+  --secondary-foreground: #cbd5e1; /* Light slate text */
+  --muted: #1e293b; /* Medium dark slate */
+  --muted-foreground: #94a3b8; /* Slate gray */
+  --accent: #22d3ee; /* Bright cyan for dark mode */
+  --accent-foreground: #020617; /* Very dark slate text */
+  --destructive: #f87171; /* Softer red for dark mode */
+  --destructive-foreground: #f8fafc; /* Light slate text */
+  --border: #334155; /* Medium slate border */
+  --input: #1e293b; /* Medium dark slate input */
+  --ring: #38bdf8; /* Lighter sky blue focus ring */
+  --chart-1: #38bdf8; /* Lighter sky blue for chart elements */
+  --chart-2: #22d3ee; /* Bright cyan for chart elements */
+  --chart-3: #a78bfa; /* Light purple for chart variety */
+  --chart-4: #4ade80; /* Light emerald for chart elements */
+  --chart-5: #fbbf24; /* Light amber for chart elements */
+  --sidebar: #0f172a; /* Dark slate for sidebar */
+  --sidebar-foreground: #e2e8f0; /* Light slate for sidebar text */
+  --sidebar-primary: #38bdf8; /* Lighter sky blue for sidebar primary elements */
+  --sidebar-primary-foreground: #020617; /* Very dark slate text */
+  --sidebar-accent: #22d3ee; /* Bright cyan for sidebar accents */
+  --sidebar-accent-foreground: #020617; /* Very dark slate text */
+  --sidebar-border: #334155; /* Medium slate border */
+  --sidebar-ring: #38bdf8; /* Lighter sky blue for sidebar focus rings */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Enhanced ocean color utilities */
+  --color-ocean-deep: var(--ocean-deep);
+  --color-ocean-medium: var(--ocean-medium);
+  --color-ocean-light: var(--ocean-light);
+  --color-coral: var(--coral);
+  --color-seafoam: var(--seafoam);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Enhanced ocean-themed animations */
+@keyframes wave {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Adding smooth slide-in animation for chatbot */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-wave {
+  animation: wave 3s ease-in-out infinite;
+}
+
+.animate-ripple {
+  animation: ripple 0.8s ease-out;
+}
+
+.animate-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Adding smooth slide-in class for chatbot */
+.animate-slide-in-right {
+  animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
